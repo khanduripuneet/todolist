@@ -19,6 +19,9 @@
 		01ABD8CB180E64F10059E335 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01ABD8B3180E64F10059E335 /* UIKit.framework */; };
 		01ABD8D3180E64F10059E335 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01ABD8D1180E64F10059E335 /* InfoPlist.strings */; };
 		01ABD8D5180E64F10059E335 /* todolistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ABD8D4180E64F10059E335 /* todolistTests.m */; };
+		01ABD8E2180E663E0059E335 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ABD8E1180E663E0059E335 /* TableViewController.m */; };
+		01ABD8E5180E685B0059E335 /* DefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ABD8E4180E685B0059E335 /* DefaultCell.m */; };
+		01ABD8E7180E689F0059E335 /* DefaultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01ABD8E6180E689F0059E335 /* DefaultCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,11 @@
 		01ABD8D0180E64F10059E335 /* todolistTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "todolistTests-Info.plist"; sourceTree = "<group>"; };
 		01ABD8D2180E64F10059E335 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		01ABD8D4180E64F10059E335 /* todolistTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = todolistTests.m; sourceTree = "<group>"; };
+		01ABD8E0180E663E0059E335 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		01ABD8E1180E663E0059E335 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		01ABD8E3180E685B0059E335 /* DefaultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultCell.h; sourceTree = "<group>"; };
+		01ABD8E4180E685B0059E335 /* DefaultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultCell.m; sourceTree = "<group>"; };
+		01ABD8E6180E689F0059E335 /* DefaultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,11 @@
 				01ABD8BF180E64F10059E335 /* AppDelegate.m */,
 				01ABD8C1180E64F10059E335 /* Images.xcassets */,
 				01ABD8B6180E64F10059E335 /* Supporting Files */,
+				01ABD8E0180E663E0059E335 /* TableViewController.h */,
+				01ABD8E1180E663E0059E335 /* TableViewController.m */,
+				01ABD8E3180E685B0059E335 /* DefaultCell.h */,
+				01ABD8E4180E685B0059E335 /* DefaultCell.m */,
+				01ABD8E6180E689F0059E335 /* DefaultCell.xib */,
 			);
 			path = todolist;
 			sourceTree = "<group>";
@@ -219,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01ABD8E7180E689F0059E335 /* DefaultCell.xib in Resources */,
 				01ABD8BA180E64F10059E335 /* InfoPlist.strings in Resources */,
 				01ABD8C2180E64F10059E335 /* Images.xcassets in Resources */,
 			);
@@ -240,6 +254,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				01ABD8C0180E64F10059E335 /* AppDelegate.m in Sources */,
+				01ABD8E5180E685B0059E335 /* DefaultCell.m in Sources */,
+				01ABD8E2180E663E0059E335 /* TableViewController.m in Sources */,
 				01ABD8BC180E64F10059E335 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
