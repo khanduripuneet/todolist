@@ -26,12 +26,6 @@
     return self;
 }
 
-- (void)addTask:(id)sender{
-    NSString *task = @"new task";
-    [self.tasks addObject:task];
-    [self.tableView reloadData];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -49,14 +43,26 @@
     
     [self loadTaskData];
 
-//    UITapGestureRecognizer * dismiss = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-//    
-//    dismiss.delegate = self;
-//    
-//    [self.tableView addGestureRecognizer:dismiss];
+    UITapGestureRecognizer * dismiss = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    
+    dismiss.delegate = self;
+    
+    [self.tableView addGestureRecognizer:dismiss];
     
     
 }
+
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    return ![self.tableView isEditing];
+}
+
+- (void)addTask:(id)sender{
+    [self.tasks insertObject:@"" atIndex:0];
+    [self saveTaskData];
+    [self.tableView reloadData];
+}
+
 -(void)dismissKeyboard {
     [self.tableView endEditing:YES];
     [self saveTaskData];
@@ -101,6 +107,7 @@
     
     // Configure the cell...
     cell.description.text = [self.tasks objectAtIndex:indexPath.row];
+    cell.description.delegate = self;
     return cell;
 }
 
@@ -123,16 +130,29 @@
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        
-    }   
+    }
+    [self saveTaskData];
 }
 
-/*
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    //Update array at index of textField with new value
+    CGPoint point = [textField convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+    self.tasks[indexPath.row] = textField.text;
+    
+    //Save array
+    [self saveTaskData];
+}
+
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    NSString *temp = self.tasks[toIndexPath.row];
+    self.tasks[toIndexPath.row] = self.tasks[fromIndexPath.row];
+    self.tasks[fromIndexPath.row] = temp;
+    [self saveTaskData];
 }
-*/
+
 
 /*
 // Override to support conditional rearranging of the table view.
